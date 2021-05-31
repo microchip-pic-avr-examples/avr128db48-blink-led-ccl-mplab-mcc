@@ -4,10 +4,10 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.avr128db48-blink-led-ccl-mplab-mcc",
-        "version": " ",
-        "displayName": "AVR128DB48 blink led ccl mplab mcc",
+        "version": "1.0.0",
+        "displayName": "Blink Using Integrated Logic",
         "projectName": "avr128db48-blink-led-ccl-mplab-mcc",
-        "shortDescription": "This MPLAB X Melody code example shows how to make a LED blink using the Configurable Custom Logic CCL found in the AVR DB The CCL is configured as a JK toggle flip flop and is toggled by a timer",
+        "shortDescription": "This MPLAB X Melody code example shows how to make an LED blink using the Configurable Custom Logic (CCL) found in the AVR® DB. The CCL is configured as a toggling J-K flip-flop. The toggling is a result of a timer event.",
         "ide": {
             "name": "MPLAB X",
             "semverRange": ">=5.45.0"
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "AVR-Dx_DFP",
+            "semverRange": "1.7.98"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=4.1.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,9 +37,26 @@
             }
         },
         "author": "Carl Einar Hellenes",
-        "subcategories": [],
-        "peripherals": [],
-        "keywords": [],
+        "subcategories": [
+            [
+                "Peripherals", "CCL"
+            ],
+            [
+                "Peripherals", "TCA"
+            ],
+            [
+                "Peripherals", "EVSYS"
+            ]
+        ],
+        "peripherals": [
+            "CCL", "TCA", "EVSYS" 
+        ],
+        "keywords": [
+			"LED",
+			"Flip-flop",
+			"Curiosity Nano",
+			"Melody"
+		],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
