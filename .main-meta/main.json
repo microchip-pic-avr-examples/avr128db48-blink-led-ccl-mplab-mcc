@@ -4,7 +4,7 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.avr128db48-blink-led-ccl-mplab-mcc",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "displayName": "Blink Using Integrated Logic",
         "projectName": "avr128db48-blink-led-ccl-mplab-mcc",
         "shortDescription": "This MPLAB X Melody code example shows how to make an LED blink using the Configurable Custom Logic (CCL) found in the AVR® DB. The CCL is configured as a toggling J-K flip-flop. The toggling is a result of a timer event.",
