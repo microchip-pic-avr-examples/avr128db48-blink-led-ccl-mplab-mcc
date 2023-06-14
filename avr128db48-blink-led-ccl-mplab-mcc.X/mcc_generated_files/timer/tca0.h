@@ -7,10 +7,10 @@
  *
  * @brief This file contains the API prototypes for the TCA0 driver in Normal (16-bit) mode.
  *
- * @version TCA0 Driver Version 2.1.2
+ * @version TCA0 Driver Version 2.1.1
 */
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -49,7 +49,7 @@ extern "C" {
  * @typedef void TCA0_cb_t
  * @brief Function pointer to the callback function called by TCA when operating in Normal mode. The default value is set to NULL which means that no callback function will be used.
  */  
-typedef void (*TCA0_cb_t)(void);    
+typedef void (*TCA0_cb_t)(void);
 
 extern const struct TMR_INTERFACE TCA0_Interface;
 
@@ -182,6 +182,7 @@ bool TCA0_IsCMP1InterruptFlagSet(void);
  * @return None.
  */
 void TCA0_ClearCMP2InterruptFlag(void);
+
 /**
  * @ingroup tca0_normal
  * @brief Checks the Compare 2 Interrupt flag status for the TCA.

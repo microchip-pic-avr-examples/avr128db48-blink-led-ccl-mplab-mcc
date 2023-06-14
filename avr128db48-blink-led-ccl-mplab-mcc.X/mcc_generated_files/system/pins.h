@@ -8,11 +8,11 @@
  * @brief This is generated driver header for pins. 
  *        This header file provides APIs for all pins selected in the GUI.
  *
- * @version Driver Version  1.0.1
+ * @version Driver Version  1.1.0
 */
 
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -55,6 +55,7 @@
 #define IO_PB3_EnableInterruptForFallingEdge() do { PORTB.PIN3CTRL = (PORTB.PIN3CTRL & ~PORT_ISC_gm) | 0x3 ; } while(0)
 #define IO_PB3_DisableDigitalInputBuffer() do { PORTB.PIN3CTRL = (PORTB.PIN3CTRL & ~PORT_ISC_gm) | 0x4 ; } while(0)
 #define IO_PB3_EnableInterruptForLowLevelSensing() do { PORTB.PIN3CTRL = (PORTB.PIN3CTRL & ~PORT_ISC_gm) | 0x5 ; } while(0)
+#define PB3_SetInterruptHandler IO_PB3_SetInterruptHandler
 
 /**
  * @ingroup  pinsdriver
@@ -66,22 +67,22 @@ void PIN_MANAGER_Initialize();
 
 /**
  * @ingroup  pinsdriver
- * @brief Default Interrupt Handler for PB3 pin. 
- *        This is a predefined interrupt handler to be used together with the PB3_SetInterruptHandler() method.
- *        This handler is called every time the PB3 ISR is executed. 
+ * @brief Default Interrupt Handler for IO_PB3 pin. 
+ *        This is a predefined interrupt handler to be used together with the IO_PB3_SetInterruptHandler() method.
+ *        This handler is called every time the IO_PB3 ISR is executed. 
  * @pre PIN_MANAGER_Initialize() has been called at least once
  * @param none
  * @return none
  */
-void PB3_DefaultInterruptHandler(void);
+void IO_PB3_DefaultInterruptHandler(void);
 
 /**
  * @ingroup  pinsdriver
- * @brief Interrupt Handler Setter for PB3 pin input-sense-config functionality.
- *        Allows selecting an interrupt handler for PB3 at application runtime
+ * @brief Interrupt Handler Setter for IO_PB3 pin input-sense-config functionality.
+ *        Allows selecting an interrupt handler for IO_PB3 at application runtime
  * @pre PIN_MANAGER_Initialize() has been called at least once
  * @param InterruptHandler function pointer.
  * @return none
  */
-void PB3_SetInterruptHandler(void (* interruptHandler)(void)) ; 
+void IO_PB3_SetInterruptHandler(void (* interruptHandler)(void)) ; 
 #endif /* PINS_H_INCLUDED */

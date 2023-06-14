@@ -8,11 +8,11 @@
  * @brief This is generated driver implementation for pins. 
  *        This file provides implementations for pin APIs for all pins selected in the GUI.
  *
- * @version Driver Version 1.0.1
+ * @version Driver Version 1.1.0
 */
 
 /*
-© [2022] Microchip Technology Inc. and its subsidiaries.
+© [2023] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -34,7 +34,7 @@
 
 #include "../pins.h"
 
-static void (*PB3_InterruptHandler)(void);
+static void (*IO_PB3_InterruptHandler)(void);
 
 void PIN_MANAGER_Initialize()
 {
@@ -118,21 +118,21 @@ void PIN_MANAGER_Initialize()
     PORTMUX.ZCDROUTEA = 0x0;
 
   // register default ISC callback functions at runtime; use these methods to register a custom function
-    PB3_SetInterruptHandler(PB3_DefaultInterruptHandler);
+    IO_PB3_SetInterruptHandler(IO_PB3_DefaultInterruptHandler);
 }
 
 /**
-  Allows selecting an interrupt handler for PB3 at application runtime
+  Allows selecting an interrupt handler for IO_PB3 at application runtime
 */
-void PB3_SetInterruptHandler(void (* interruptHandler)(void)) 
+void IO_PB3_SetInterruptHandler(void (* interruptHandler)(void)) 
 {
-    PB3_InterruptHandler = interruptHandler;
+    IO_PB3_InterruptHandler = interruptHandler;
 }
 
-void PB3_DefaultInterruptHandler(void)
+void IO_PB3_DefaultInterruptHandler(void)
 {
-    // add your PB3 interrupt custom code
-    // or set custom function using PB3_SetInterruptHandler()
+    // add your IO_PB3 interrupt custom code
+    // or set custom function using IO_PB3_SetInterruptHandler()
 }
 ISR(PORTA_PORT_vect)
 { 
@@ -145,7 +145,7 @@ ISR(PORTB_PORT_vect)
     // Call the interrupt handler for the callback registered at runtime
     if(VPORTB.INTFLAGS & PORT_INT3_bm)
     {
-       PB3_InterruptHandler(); 
+       IO_PB3_InterruptHandler(); 
     }
     /* Clear interrupt flags */
     VPORTB.INTFLAGS = 0xff;
